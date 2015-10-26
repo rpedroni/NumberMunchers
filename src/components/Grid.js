@@ -12,10 +12,8 @@ class Grid extends React.Component {
       grid: {
         display: 'flex',
         flexFlow: 'row wrap',
-        // justifyContent: 'space-around',
-        // alignItems: 'stretch',
-        height: 500, width: '100%',
         backgroundColor: 'rgb(240, 240, 240)',
+        flexGrow: 9
       },
       cell: {
         flex: `1 0 ${100/numColumns}%`,

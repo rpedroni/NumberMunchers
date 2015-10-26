@@ -23,7 +23,7 @@ class GridCell extends React.Component {
 
     return (
       <div style={Object.assign(style, this.props.style)}>
-        <span style={style.text}>{this.props.value}</span>
+          <span style={style.text}>{this.props.value}</span>
       </div>
     );
 

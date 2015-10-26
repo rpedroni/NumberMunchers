@@ -5,7 +5,9 @@ class RuleDisplay extends React.Component {
   render() {
     let style = {
       padding: 10,
-      textAlign: 'center', marginBottom: 10
+      marginBottom: 10,
+      textAlign: 'center',
+      fontSize: 30
     };
 
     // TODO
