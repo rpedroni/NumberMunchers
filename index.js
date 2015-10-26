@@ -1,15 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class App extends React.Component {
-  render() {
-    return (
-      <h1>Hello!</h1>
-    );
-  }
-}
+import App from './src/containers/App';
 
 ReactDOM.render(
   <App />,
-    document.getElementById('app')
-  );
+  document.getElementById('app')
+);
