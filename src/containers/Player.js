@@ -1,10 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { playerMoved, PlayerMoveDirections } from '../redux/actions/actions';
 
 class Player extends React.Component {
 
   // Add and remove keyboard event listener to check for Player's moves
   componentWillMount() {
-    window.addEventListener('keydown', this.keydown);
+    window.addEventListener('keydown', (k) => this.keydown(k) );
   }
   componentWillUnmount() {
     window.removeEventListener('keydown');
@@ -12,15 +14,17 @@ class Player extends React.Component {
 
   // Detect which key the player pressed
   keydown(key) {
+    let direction = null;
     switch (key.keyIdentifier) {
-      case 'Left':
-      case 'Right':
-      case 'Up':
-      case 'Down':
-        console.log('hey');
-        break;
+      case 'Left': direction = PlayerMoveDirections.LEFT; break;
+      case 'Right': direction = PlayerMoveDirections.RIGHT; break;
+      case 'Up':  direction = PlayerMoveDirections.UP; break;
+      case 'Down':  direction = PlayerMoveDirections.DOWN; break;
       default:
         break;
+    }
+    if (direction) {
+      this.props.dispatch(playerMoved(direction));
     }
   }
 
@@ -31,4 +35,4 @@ class Player extends React.Component {
   }
 }
 
-export default Player;
+export default connect()(Player);

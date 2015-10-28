@@ -9,7 +9,7 @@ const initialState = {
   heroPosition: { x: 0, y: 0 },
 };
 
-function app(state = initialState, action) {
+export default function app(state = initialState, action) {
 
   switch (action.type) {
     case PLAYER_MOVED:
@@ -20,6 +20,7 @@ function app(state = initialState, action) {
 }
 
 function handleHeroMove(position, direction, size) {
+  let out = position;
   switch (direction) {
     case PlayerMoveDirections.UP:
       if (position.y > 0) out.y--;
