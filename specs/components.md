@@ -9,5 +9,5 @@ Component & containers
 + GameBoard
   + RuleDisplay
   + Grid
+    + Hero
     + GridCell
-  + Hero
