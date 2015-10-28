@@ -5,7 +5,10 @@ import { Provider } from 'react-redux';
 import App from './src/containers/App';
 import app from './src/redux/reducers/reducers';
 
-let store = createStore(app);
+let store = createStore(app, {
+  boardSize: { width: 4, height: 2 },
+  heroPosition: { x: 0, y: 0}
+});
 
 render(
   <Provider store={store}>

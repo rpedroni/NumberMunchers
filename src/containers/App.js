@@ -7,8 +7,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <GameBoard />
         <Player />
+        <GameBoard />
       </div>
     );
   }

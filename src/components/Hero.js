@@ -1,37 +1,31 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-import {Motion, spring} from 'react-motion';
+import { Motion, spring, presets } from 'react-motion';
 
 class Hero extends React.Component {
 
   render() {
-    const DIMENSION = 50;
+    const DIMENSION = 66;
+    const HALF_D = DIMENSION / 2;
     let style = {
       borderRadius: '50%',
       backgroundColor: 'rgb(58, 130, 54)',
       height: DIMENSION, width: DIMENSION,
       position: 'absolute',
-      top: this.props.position[0],
-      left: this.props.position[1]
+      left: this.props.position.x - HALF_D,
+      top: this.props.position.y - HALF_D
     };
 
     return (
-      // <Motion
-      //   defaultStyle={{x: 0, y: 0}}
-      //   style={{x: spring(150), y: spring(300)}}>
-      //   {(value) => {
-      //     style.left = value.x;
-      //     style.top = value.y;
-      //     return (<div style={style}>
-      //       {value.x}
-      //     </div>);
-      //   }}
-      // </Motion>
-      <span style={style}></span>
+      <span style={style} />
     );
-
   }
-
 }
+Hero.propTypes = {
+  position: PropTypes.shape({
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired
+  }).isRequired
+};
 
 export default Hero;
