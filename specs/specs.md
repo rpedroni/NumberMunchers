@@ -8,7 +8,7 @@ NumberMunchers Specifications
   - Cells can have a value in them or be empty
   - Hero/monsters can walk on top of cells
 + Hero
-  1. Spawns ~centralized in level (close to center)
+  1. ~~Spawns ~centralized in level (close to center)~~ Hero will start at (0,0) for now
   - Can move only one horizontal or vertical cell at a time (no diagonals), only limited by walls/extremes
   <!-- - Future Versions:
     - Starts game with X lives
