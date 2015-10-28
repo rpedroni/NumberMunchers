@@ -55,3 +55,12 @@ A twist of the classic NumberMunchers game, written in JavaScript/JSX using Reac
   1. Players "moves" based on reading the keyboard inputs and passing the moves to the interessed components
 4. Numbers
   1. Create a random number generator, generating the quantity of numbers requested
+
+
+### Roadmap
+---
+
++ Monsters
++ Choosable rules (and number generation)
++ Hero live count
++ High score
