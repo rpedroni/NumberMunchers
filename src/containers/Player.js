@@ -12,12 +12,21 @@ class Player extends React.Component {
 
   // Detect which key the player pressed
   keydown(key) {
-    console.log(key.keyIdentifier);
+    switch (key.keyIdentifier) {
+      case 'Left':
+      case 'Right':
+      case 'Up':
+      case 'Down':
+        console.log('hey');
+        break;
+      default:
+        break;
+    }
   }
 
   render() {
     return (
-      <span></span>
+      <span>{/* Our mighty player */}</span>
     );
   }
 }
