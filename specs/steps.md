@@ -1,7 +1,7 @@
 Development Steps - Scrum
 ===
 
-### Sprint #1 [2015-10-28 15:02]
+~~### Sprint #1 [2015-10-26 10:02]~~
 1. Create dumb components and logic-less containers
   + Player
   + GameBoard
@@ -10,4 +10,9 @@ Development Steps - Scrum
     + Grid
       + GridCell
 
-### Sprint #2
+### Sprint #2 [2015-10-28 15:37]
+1. Build basic Redux structure - Player container will need it
++ Make Player container receive keyboard commands and pass them around, using Redux
+  - Container will watch for 'keydown' event and signal Redux each time a move is done
++ AppState should hold the Hero's position index (useful to detect which cell in, collision with walls and monsters)
++ Based on move commands, make Hero move around inside the Grid
