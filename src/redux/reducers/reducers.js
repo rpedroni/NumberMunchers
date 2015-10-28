@@ -9,11 +9,16 @@ const initialState = {
   heroPosition: { x: 0, y: 0 },
 };
 
-export default function app(state = initialState, action) {
+// Export app reducer
+export default
+function app(state = initialState, action) {
+
+  // console.log(`Action: ${action.type} | Value:`, action);
 
   switch (action.type) {
     case PLAYER_MOVED:
-      return Object.assign({}, state, handleHeroMove(state.heroPosition, action.direction, state.boardSize));
+      let newHP = handleHeroMove(state.heroPosition, action.direction, state.boardSize);
+      return Object.assign({}, state, { heroPosition: { x: newHP.x, y: newHP.y } });
     default:
       return state;
   }
@@ -26,13 +31,13 @@ function handleHeroMove(position, direction, size) {
       if (position.y > 0) out.y--;
       break;
     case PlayerMoveDirections.DOWN:
-      if (position.y < size.height) out.y++;
+      if (position.y < size.height - 1) out.y++;
       break;
     case PlayerMoveDirections.LEFT:
       if (position.x > 0) out.x--;
       break;
     case PlayerMoveDirections.RIGHT:
-      if (position.x < size.width) out.x++;
+      if (position.x < size.width - 1) out.x++;
       break;
   }
   return out;
