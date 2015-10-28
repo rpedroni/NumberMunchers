@@ -1,8 +1,13 @@
-# Component & containers
+Component & containers
+===
 
-Player
-GameBoard >
-  RuleDisplay
-  Grid >
-    GridCell
-  Hero
+> Same level: siblings
+
+> Indent: child
+
++ Player
++ GameBoard
+  + RuleDisplay
+  + Grid
+    + GridCell
+  + Hero

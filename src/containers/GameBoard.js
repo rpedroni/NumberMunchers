@@ -7,32 +7,29 @@ import Hero from '../components/Hero';
 
 class GameBoard extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      width: 0,
-      height: 0
-    };
+  // On component mount, resize the game board to fit window
+  componentWillMount() {
+    window.addEventListener('resize', () => { this.resize(); });
+    this.resize();
   }
 
-  componentWillMount() {
-    window.addEventListener('resize', () => {
-      this.setState({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-      console.log(this.state.width);
+  // Resize serves to always fit the game board in the window
+  resize() {
+    this.setState({
+      width: window.innerWidth,
+      height: window.innerHeight,
     });
   }
 
   render() {
     let style = {
       fontFamily: 'Oswald, Roboto, sans',
-      width: this.state.width,
+      width: this.state.width - 20,
       height: this.state.height,
       maxHeight: 600,
       maxWidth: 1100,
       margin: '0 auto',
+      position: 'relative',
       display: 'flex',
       flexFlow: 'column nowrap',
       backgroundColor: 'rgb(153, 210, 158)',
@@ -40,12 +37,10 @@ class GameBoard extends React.Component {
     return (
       <div style={style}>
         <RuleDisplay />
-          <Hero position={[100,50]} />
-        <Grid>
-        </Grid>
+        <Hero position={[100,50]} />
+        <Grid />
       </div>
     );
-
   }
 
 }

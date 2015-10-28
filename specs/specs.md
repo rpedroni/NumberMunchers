@@ -1,7 +1,7 @@
-# NumberMunchers Specifications
+NumberMunchers Specifications
+===
 
 ### Functional Requirements
----
 
 1. Grid
   1. Fixed size grid / rectangle (AxB cells)
@@ -27,13 +27,13 @@
 
 
 ### Design Parameters
----
+
 1. Grid
   1. Grid is composed on multiple individual cell components "GridCell"s. The cells are contained in a higher order component called "Grid", placed inside "GameBoard". Cells are shaped as squares
-  - Each cell component can hold a value, passed in as a parameter. If null, considered an empty cell (or can be emptied under conditions e.g. hero eating number)
-  - Cells are dumb components that can be "walked" upon. This is done transparently, without knowledge of the cell component (i.e. hero moves on top of cells and is not contained in them)
+  2. Each cell component can hold a value, passed in as a parameter. If null, considered an empty cell (or can be emptied under conditions e.g. hero eating number)
+  3. Cells are dumb components that can be "walked" upon. This is done transparently, without knowledge of the cell component (i.e. hero moves on top of cells and is not contained in them)
 2. Hero
   1. Get grid cell at centralized position and place hero initially
-  - Update hero position with -1/+1 position index per move command, not allowing diagonal moves (and possibly delaying move inputs). Move commands are issued using the arrow keys and "GameBoard" container enforces hero's position and movement constraints. Movements are made by the "Player" container
+  2. Update hero position with -1/+1 position index per move command, not allowing diagonal moves (and possibly delaying move inputs). Move commands are issued using the arrow keys and "GameBoard" container enforces hero's position and movement constraints. Movements are made by the "Player" container
 3. Numbers
   1. Create a random number generator, generating the quantity of numbers requested

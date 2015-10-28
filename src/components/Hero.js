@@ -10,7 +10,7 @@ class Hero extends React.Component {
       borderRadius: '50%',
       backgroundColor: 'rgb(58, 130, 54)',
       height: DIMENSION, width: DIMENSION,
-      position: 'fixed',
+      position: 'absolute',
       top: this.props.position[0],
       left: this.props.position[1]
     };
@@ -27,9 +27,7 @@ class Hero extends React.Component {
       //     </div>);
       //   }}
       // </Motion>
-      <span style={style}>
-        X
-      </span>
+      <span style={style}></span>
     );
 
   }
