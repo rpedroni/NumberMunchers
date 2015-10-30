@@ -2,29 +2,45 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 // Actions
-import { generateNumbers } from '../redux/actions/actions';
+import {
+  // Numbers
+  generateValues,
+  // Player
+  playerMoved, PlayerMoveDirections,
+  playerEat
+} from '../redux/actions/actions';
 
 // Components
 import GameBoard from './GameBoard';
 import Player from './Player';
 
 // Utils
-import NumberGenerator from '../utils/NumberGenerator';
+import { handleHeroMove } from '../utils/GameLogic';
 
 class App extends React.Component {
 
   componentWillMount() {
     // TODO: still dumb level start - update this later
     // Signal level start
-    this.props.dispatch(generateNumbers(null, this.props.boardSize.width * this.props.boardSize.height));
+    this.props.dispatch(
+      generateValues(null, this.props.boardSize.width * this.props.boardSize.height)
+    );
+  }
+
+  playerMove(direction) {
+    let newHP = handleHeroMove(this.props.heroPosition, direction, this.props.boardSize);
+    this.props.dispatch(playerMoved(newHP));
+  }
+  playerEat() {
+    this.props.dispatch(playerEat());
   }
 
   render() {
-    let { heroPosition, boardSize, numbers } = this.props;
+    let { heroPosition, boardSize, values } = this.props;
     return (
       <div>
-        <Player />
-        <GameBoard heroPosition={heroPosition} boardSize={boardSize} numbers={numbers} />
+        <Player playerMove={this.playerMove.bind(this)} playerEat={this.playerEat.bind(this)} />
+        <GameBoard heroPosition={heroPosition} boardSize={boardSize} values={values} />
       </div>
     );
   }
@@ -45,7 +61,7 @@ function mapStateToProps(state) {
   return {
     boardSize: state.boardSize,
     heroPosition: state.heroPosition,
-    numbers: state.numbers
+    values: state.values
   };
 }
 export default connect(mapStateToProps)(App);

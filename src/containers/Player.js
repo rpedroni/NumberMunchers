@@ -1,9 +1,5 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import {
-  playerMoved, PlayerMoveDirections,
-  playerEatNumber
-} from '../redux/actions/actions';
+import React, { PropTypes } from 'react';
+import { PlayerMoveDirections } from '../redux/actions/actions';
 
 class Player extends React.Component {
 
@@ -17,24 +13,32 @@ class Player extends React.Component {
 
   // Detect which key the player pressed
   keydown(key) {
+
+    // Move
     let direction = null;
     switch (key.keyIdentifier) {
-
-      // Move
       case 'Left': direction = PlayerMoveDirections.LEFT; break;
       case 'Right': direction = PlayerMoveDirections.RIGHT; break;
       case 'Up':  direction = PlayerMoveDirections.UP; break;
       case 'Down':  direction = PlayerMoveDirections.DOWN; break;
-
-      // Eat
-      case 'U+0020': this.props.dispatch(playerEatNumber()); break;
-
       default:
       break;
     }
     if (direction) {
-      this.props.dispatch(playerMoved(direction));
+      this.props.playerMove(direction);
+      return;
     }
+
+    // Eat
+    switch (key.keyIdentifier) {
+      case 'U+0020': // Space
+      case 'Enter': // Enter
+      this.props.playerEat();
+      break;
+      default:
+      break;
+    }
+
   }
 
   render() {
@@ -43,5 +47,9 @@ class Player extends React.Component {
     );
   }
 }
+Player.propTypes = {
+  playerMove: PropTypes.func.isRequired,
+  playerEat: PropTypes.func.isRequired
+};
 
-export default connect()(Player);
+export default Player;

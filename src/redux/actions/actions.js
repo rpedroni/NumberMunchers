@@ -7,23 +7,23 @@ export const PlayerMoveDirections = {
   RIGHT: 'DIRECTION_RIGHT'
 };
 
-export function playerMoved(direction) {
+export function playerMoved(position) {
   return {
     type: PLAYER_MOVED,
-    direction: direction
+    position
   };
 }
 //
-export const PLAYER_ACTION_EAT_NUMBER = 'PLAYER_ACTION_EAT_NUMBER';
-export function playerEatNumber() {
-  return { type: PLAYER_ACTION_EAT_NUMBER };
+export const PLAYER_ACTION_EAT = 'PLAYER_ACTION_EAT';
+export function playerEat() {
+  return { type: PLAYER_ACTION_EAT };
 }
 
 //
-export const GENERATE_NUMBERS = 'GENERATE_NUMBERS';
-export function generateNumbers(rule, quantity) {
+export const GENERATE_VALUES = 'GENERATE_VALUES';
+export function generateValues(rule, quantity) {
   return {
-    type: GENERATE_NUMBERS,
+    type: GENERATE_VALUES,
     rule,
     quantity
   };
