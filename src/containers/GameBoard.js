@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
 
 import Grid from '../components/Grid';
 import RuleDisplay from '../components/RuleDisplay';
@@ -71,11 +70,4 @@ GameBoard.propTypes = {
   }).isRequired,
 };
 
-function select(state) {
-  return {
-    boardSize: state.boardSize,
-    heroPosition: state.heroPosition
-  };
-}
-
-export default connect(select)(GameBoard);
+export default GameBoard;

@@ -1,7 +1,8 @@
 import {
   PLAYER_MOVED,
   playerMoved,
-  PlayerMoveDirections
+  PlayerMoveDirections,
+  beginLevel, BEGIN_LEVEL
 } from '../actions/actions';
 
 const initialState = {
@@ -13,9 +14,13 @@ const initialState = {
 export default
 function app(state = initialState, action) {
 
-  // console.log(`Action: ${action.type} | Value:`, action);
+  console.log(`Action: ${action.type} | Value:`, action);
 
   switch (action.type) {
+
+    case BEGIN_LEVEL:
+      return state;
+
     case PLAYER_MOVED:
       let newHP = handleHeroMove(state.heroPosition, action.direction, state.boardSize);
       return Object.assign({}, state, { heroPosition: { x: newHP.x, y: newHP.y } });
