@@ -1,0 +1,13 @@
+@startuml
+
+title Random number generation
+
+start
+:Level starts;
+:Send action;
+:NumberGenerator gets board size (WxH);
+:NumberGenerator generates WxH random numbers;
+:NumberGenerator sends action, passing the generated numbers;
+stop
+
+@enduml
