@@ -4,8 +4,12 @@ import { connect } from 'react-redux';
 // Actions
 import { beginLevel } from '../redux/actions/actions';
 
+// Components
 import GameBoard from './GameBoard';
 import Player from './Player';
+
+// Utils
+import NumberGenerator from '../utils/NumberGenerator';
 
 class App extends React.Component {
 
@@ -37,11 +41,10 @@ App.propTypes = {
   }).isRequired,
 };
 
-
-function select(state) {
+function mapStateToProps(state) {
   return {
     boardSize: state.boardSize,
     heroPosition: state.heroPosition
   };
 }
-export default connect(select)(App);
+export default connect(mapStateToProps)(App);
