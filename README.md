@@ -30,7 +30,7 @@ A twist of the classic NumberMunchers game, written in JavaScript/JSX using Reac
 + Player
   1. Selects moves for hero (move directions and "eat")
 + Numbers
-  1. Used to fill up cells. For now, just randomly generated with no purpose besides filling up cells
+  1. Used to fill up cells. Number generation follows a set of pre-defined rules (currently, just generating a random set of numbers to fill in cells)
   <!-- - Number of correct options in range [X, Y] -->
 + Levels (in future version!)
   <!-- 1. Every level has a mathematical proposition (e.g. Multiples of 5) (in future version: equations  3 x 12 = ?)
@@ -54,7 +54,7 @@ A twist of the classic NumberMunchers game, written in JavaScript/JSX using Reac
 3. Player
   1. Players "moves" based on reading the keyboard inputs and passing the moves to the interessed components
 4. Numbers
-  1. Create a random number generator, generating the quantity of numbers requested
+  1. Create a random number generator, generating the quantity of numbers requested, populating cells at the beginning of levels
 
 
 ### Roadmap
@@ -62,5 +62,5 @@ A twist of the classic NumberMunchers game, written in JavaScript/JSX using Reac
 
 + Monsters
 + Choosable rules (and number generation)
-+ Hero live count
++ Hero life count
 + High score
