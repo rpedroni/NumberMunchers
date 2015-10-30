@@ -50,7 +50,7 @@ A twist of the classic NumberMunchers game, written in JavaScript/JSX using Reac
   3. Cells are dumb components that can be "walked" upon. This is done transparently, without knowledge of the cell component (i.e. hero moves on top of cells and is not contained in them)
 2. Hero
   1. Get grid cell at centralized position and place hero initially
-  2. Update hero position with -1/+1 position index per move command, not allowing diagonal moves (and possibly delaying move inputs). Move commands are issued using the arrow keys and "GameBoard" container enforces hero's position and movement constraints. Movements are made by the "Player" container
+  2. Update hero position with -1/+1 position index per move command, not allowing diagonal moves (and possibly delaying move inputs). Movements are made by the "Player" container
 3. Player
   1. Players "moves" based on reading the keyboard inputs and passing the moves to the interessed components
 4. Numbers
