@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { playerMoved, PlayerMoveDirections } from '../redux/actions/actions';
+import {
+  playerMoved, PlayerMoveDirections,
+  playerEatNumber
+} from '../redux/actions/actions';
 
 class Player extends React.Component {
 
@@ -16,12 +19,18 @@ class Player extends React.Component {
   keydown(key) {
     let direction = null;
     switch (key.keyIdentifier) {
+
+      // Move
       case 'Left': direction = PlayerMoveDirections.LEFT; break;
       case 'Right': direction = PlayerMoveDirections.RIGHT; break;
       case 'Up':  direction = PlayerMoveDirections.UP; break;
       case 'Down':  direction = PlayerMoveDirections.DOWN; break;
+
+      // Eat
+      case 'U+0020': this.props.dispatch(playerEatNumber()); break;
+
       default:
-        break;
+      break;
     }
     if (direction) {
       this.props.dispatch(playerMoved(direction));
