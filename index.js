@@ -9,7 +9,8 @@ import appReducers from './src/redux/reducers/reducers';
 
 let store = createStore(appReducers, {
   boardSize: { width: 6, height: 4 },
-  heroPosition: { x: 0, y: 0}
+  heroPosition: { x: 0, y: 0 },
+  numbers: []
 });
 
 render(

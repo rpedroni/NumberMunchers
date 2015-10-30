@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 // Actions
-import { beginLevel } from '../redux/actions/actions';
+import { generateNumbers } from '../redux/actions/actions';
 
 // Components
 import GameBoard from './GameBoard';
@@ -16,15 +16,15 @@ class App extends React.Component {
   componentWillMount() {
     // TODO: still dumb level start - update this later
     // Signal level start
-    this.props.dispatch(beginLevel());
+    this.props.dispatch(generateNumbers(null, this.props.boardSize.width * this.props.boardSize.height));
   }
 
   render() {
-    let { heroPosition, boardSize } = this.props;
+    let { heroPosition, boardSize, numbers } = this.props;
     return (
       <div>
         <Player />
-        <GameBoard heroPosition={heroPosition} boardSize={boardSize} />
+        <GameBoard heroPosition={heroPosition} boardSize={boardSize} numbers={numbers} />
       </div>
     );
   }
@@ -44,7 +44,8 @@ App.propTypes = {
 function mapStateToProps(state) {
   return {
     boardSize: state.boardSize,
-    heroPosition: state.heroPosition
+    heroPosition: state.heroPosition,
+    numbers: state.numbers
   };
 }
 export default connect(mapStateToProps)(App);

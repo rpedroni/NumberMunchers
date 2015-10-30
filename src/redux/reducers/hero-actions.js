@@ -7,7 +7,7 @@ import {
 // Export app reducer
 export default function heroActionsReducer(state, action) {
 
-  console.log(`Action: ${action.type} | Value:`, action);
+  // console.log(`Action: ${action.type} | Value:`, action);
 
   switch (action.type) {
 

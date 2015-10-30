@@ -44,7 +44,7 @@ class GameBoard extends React.Component {
       backgroundColor: 'rgb(153, 210, 158)',
     };
 
-    const { boardSize, heroPosition } = this.props;
+    const { boardSize, heroPosition, numbers } = this.props;
     const { width, height } = this.state;
     let position = {
       x: this.state.partialW * (2 * heroPosition.x + 1),
@@ -54,7 +54,7 @@ class GameBoard extends React.Component {
     return (
       <div style={style}>
         <RuleDisplay height={RULEDISPLAY_HEIGHT} />
-        <Grid boardSize={boardSize} heroPosition={position} />
+        <Grid boardSize={boardSize} heroPosition={position} numbers={numbers} />
       </div>
     );
   }
@@ -68,6 +68,7 @@ GameBoard.propTypes = {
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired
   }).isRequired,
+  numbers: PropTypes.array.isRequired
 };
 
 export default GameBoard;

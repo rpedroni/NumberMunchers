@@ -20,9 +20,13 @@ export function playerEatNumber() {
 }
 
 //
-export const BEGIN_LEVEL = 'BEGIN_LEVEL';
-export function beginLevel() {
-  return { type: BEGIN_LEVEL };
+export const GENERATE_NUMBERS = 'GENERATE_NUMBERS';
+export function generateNumbers(rule, quantity) {
+  return {
+    type: GENERATE_NUMBERS,
+    rule,
+    quantity
+  };
 }
 //
 export const NUMBERS_GENERATED = 'NUMBERS_GENERATED';

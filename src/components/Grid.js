@@ -9,7 +9,8 @@ class Grid extends React.Component {
     // Dimensions of grid
     let
     numColumns = this.props.boardSize.width,
-    numRows = this.props.boardSize.height;
+    numRows = this.props.boardSize.height,
+    numbers = this.props.numbers;
 
     let style = {
       grid: {
@@ -25,18 +26,17 @@ class Grid extends React.Component {
     };
 
     let gridCells = [];
-    for (let i = 1; i <= numColumns * numRows; i++) {
-      let index = i - 1;
+    numbers.forEach((number, index) => {
       gridCells.push(
         <GridCell
-          value={i}
+          value={number}
           key={index}
           style={style.cell}
-          isLastCol={i % numColumns === 0}
-          isLastRow={i > (numRows - 1) * numColumns}
+          isLastCol={(index + 1) % numColumns === 0}
+          isLastRow={index + 1 > (numRows - 1) * numColumns}
           />
       );
-    }
+    });
 
     return (
       <div style={style.grid}>
@@ -52,7 +52,8 @@ Grid.propTypes = {
   boardSize: PropTypes.shape({
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired
-  }).isRequired
+  }).isRequired,
+  numbers: PropTypes.array.isRequired
 };
 
 export default Grid;

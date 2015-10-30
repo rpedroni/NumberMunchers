@@ -5,7 +5,7 @@ import {
 // Export app reducer
 export default function levelReducer(state, action) {
 
-  console.log(`Action: ${action.type} | Value:`, action);
+  // console.log(`Action: ${action.type} | Value:`, action);
 
   switch (action.type) {
 
