@@ -1,8 +1,8 @@
 import {
-  GENERATE_NUMBERS
+  GENERATE_VALUES
 } from '../actions/actions';
 
-import { RANDOM_NUMBERS } from '../../utils/NumberGenerator';
+import { RANDOM_NUMBERS } from '../../utils/ValueGenerator';
 
 // Export app reducer
 export default function numbersReducer(state, action) {
@@ -11,13 +11,13 @@ export default function numbersReducer(state, action) {
 
   switch (action.type) {
 
-    case GENERATE_NUMBERS:
+    case GENERATE_VALUES:
     // TODO: not using state or action.rule for anything yet
     switch (action.rule) {
 
       // Random values
       default:
-      return Object.assign({}, state, { numbers: RANDOM_NUMBERS.slice(0, action.quantity) });
+      return Object.assign({}, state, { values: RANDOM_NUMBERS.slice(0, action.quantity) });
 
     }
 

@@ -2,7 +2,7 @@ import reduceReducers from 'reduce-reducers';
 
 import levelReducer from './level';
 import heroActionsReducer from './hero-actions';
-import numbersReducer from './numbers';
+import valuesReducer from './values';
 
 // NOTICE !!!
 // We are using REDUCE-REDUCERS to share app state between reducers since in this
@@ -11,5 +11,5 @@ import numbersReducer from './numbers';
 export default reduceReducers(
   levelReducer,
   heroActionsReducer,
-  numbersReducer
+  valuesReducer
 );

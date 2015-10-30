@@ -10,7 +10,7 @@ class Grid extends React.Component {
     let
     numColumns = this.props.boardSize.width,
     numRows = this.props.boardSize.height,
-    numbers = this.props.numbers;
+    values = this.props.values;
 
     let style = {
       grid: {
@@ -26,10 +26,10 @@ class Grid extends React.Component {
     };
 
     let gridCells = [];
-    numbers.forEach((number, index) => {
+    values.forEach((value, index) => {
       gridCells.push(
         <GridCell
-          value={number}
+          value={value}
           key={index}
           style={style.cell}
           isLastCol={(index + 1) % numColumns === 0}
@@ -44,6 +44,7 @@ class Grid extends React.Component {
         <Hero position={this.props.heroPosition} />
 
         {gridCells}
+        
       </div>
     );
   }
@@ -53,7 +54,7 @@ Grid.propTypes = {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired
   }).isRequired,
-  numbers: PropTypes.array.isRequired
+  values: PropTypes.array.isRequired
 };
 
 export default Grid;
