@@ -14,7 +14,7 @@ class GridCell extends React.Component {
       alignItems: 'center',
       justifyContent: 'center',
       text: {
-        fontSize: 25,
+        fontSize: 40,
         color: 'rgb(50, 50, 50)'
       }
     };

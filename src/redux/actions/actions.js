@@ -13,3 +13,18 @@ export function playerMoved(direction) {
     direction: direction
   };
 }
+
+//
+export const BEGIN_LEVEL = 'BEGIN_LEVEL';
+export function beginLevel() {
+  return { type: BEGIN_LEVEL };
+}
+//
+export const NUMBERS_GENERATED = 'NUMBERS_GENERATED';
+export function numbersGenerated(numbers) {
+  return {
+    type: NUMBERS_GENERATED,
+    numbers: numbers
+  };
+}
+//

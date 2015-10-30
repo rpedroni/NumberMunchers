@@ -5,9 +5,16 @@ title Random number generation
 start
 :Level starts;
 :Send action;
-:NumberGenerator gets board size (WxH);
-:NumberGenerator generates WxH random numbers;
-:NumberGenerator sends action, passing the generated numbers;
+:NumberGenerator gets board
+size (WxH);
+:NumberGenerator generates WxH
+random numbers;
+:NumberGenerator sends action, passing
+the generated numbers;
+:AppState gets a hold of numbers
+and is updated;
+:GameBoard gets notified of update and
+places values in cells;
 stop
 
 @enduml

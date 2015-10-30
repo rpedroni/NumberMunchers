@@ -23,3 +23,5 @@ Development Steps - Scrum
 ### Sprint #3 [2015-10-28 20:22]
 1. Create the number generator
   + Has no rule or logic, just generated random numbers to fill in all the grid cells
+  + Will work alongside redux actions
+  + On updating numbers, will send an action so Appstate can get a hold of the numbers
