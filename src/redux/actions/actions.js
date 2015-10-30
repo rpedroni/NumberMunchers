@@ -13,6 +13,11 @@ export function playerMoved(direction) {
     direction: direction
   };
 }
+//
+export const PLAYER_ACTION_EAT_NUMBER = 'PLAYER_ACTION_EAT_NUMBER';
+export function playerEatNumber() {
+  return { type: PLAYER_ACTION_EAT_NUMBER };
+}
 
 //
 export const BEGIN_LEVEL = 'BEGIN_LEVEL';
