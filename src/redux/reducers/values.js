@@ -5,7 +5,7 @@ import {
 import { RANDOM_NUMBERS } from '../../utils/ValueGenerator';
 
 // Export app reducer
-export default function numbersReducer(state, action) {
+export default function values(state = [], action) {
 
   // console.log(`Action: ${action.type} | Value:`, action);
 
@@ -17,7 +17,7 @@ export default function numbersReducer(state, action) {
 
       // Random values
       default:
-      return Object.assign({}, state, { values: RANDOM_NUMBERS.slice(0, action.quantity) });
+      return RANDOM_NUMBERS.slice(0, action.quantity);
 
     }
 

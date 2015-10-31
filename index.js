@@ -25,8 +25,8 @@ const finalCreateStore = compose(
 )(createStore);
 
 const store = finalCreateStore(appReducers, {
-  boardSize: { width: 6, height: 4 },
-  heroPosition: { x: 0, y: 0 },
+  board: { size: { width: 6, height: 4 }},
+  hero: { position: { x: 0, y: 0 }},
   values: []
 });
 

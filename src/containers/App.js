@@ -21,6 +21,8 @@ class App extends React.Component {
 
   componentWillMount() {
 
+    console.log(this.props);
+
     // TODO: still dumb level start - update this later
     // Signal level start
     this.props.dispatch(
@@ -56,12 +58,13 @@ App.propTypes = {
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired
   }).isRequired,
+  values: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    boardSize: state.boardSize,
-    heroPosition: state.heroPosition,
+    boardSize: state.board.size,
+    heroPosition: state.hero.position,
     values: state.values
   };
 }
