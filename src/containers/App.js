@@ -6,7 +6,7 @@ import {
   // Numbers
   generateValues,
   // Player
-  playerMoved, PlayerMoveDirections,
+  playerMoved,
   playerEat
 } from '../redux/actions/actions';
 
