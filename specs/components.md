@@ -5,9 +5,10 @@ Component & containers
 
 > Indent: child
 
-+ Player
-+ GameBoard
-  + RuleDisplay
-  + Grid
-    + Hero
-    + GridCell
++ App
+  + Player
+  + GameBoard
+    + RuleDisplay
+    + Grid
+      + Hero
+      + GridCell

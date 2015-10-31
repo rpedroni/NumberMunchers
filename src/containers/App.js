@@ -11,7 +11,7 @@ import {
 } from '../redux/actions/actions';
 
 // Components
-import GameBoard from './GameBoard';
+import GameBoard from '../components/GameBoard';
 import Player from './Player';
 
 // Utils
@@ -20,6 +20,7 @@ import { handleHeroMove } from '../utils/GameLogic';
 class App extends React.Component {
 
   componentWillMount() {
+
     // TODO: still dumb level start - update this later
     // Signal level start
     this.props.dispatch(
