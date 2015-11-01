@@ -3,12 +3,20 @@ import { PlayerMoveDirections } from '../redux/actions/actions';
 
 class Player extends React.Component {
 
+  constructor(props, context) {
+    super(props, context);
+
+    // Bind instance method to `this` here so we can removeEventListener
+    // from same instance as sent to addEventListener
+    this.keydown = this.keydown.bind(this);
+  }
+
   // Add and remove keyboard event listener to check for Player's moves
-  componentWillMount() {
-    window.addEventListener('keydown', (k) => this.keydown(k) );
+  componentDidMount() {
+    window.addEventListener('keydown', this.keydown);
   }
   componentWillUnmount() {
-    window.removeEventListener('keydown');
+    window.removeEventListener('keydown', this.keydown);
   }
 
   // Detect which key the player pressed
