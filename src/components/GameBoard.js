@@ -34,7 +34,6 @@ class GameBoard extends React.Component {
 
   render() {
     let style = {
-      fontFamily: 'Oswald, Roboto, sans',
       width: this.state.width,
       height: GAMEBOARD_MAX_HEIGHT,
       maxWidth: GAMEBOARD_MAX_WIDTH,

@@ -18,7 +18,7 @@ import Player from './Player';
 import GameLogic from '../utils/GameLogic';
 let gameLogic = new GameLogic();
 
-class App extends React.Component {
+class Game extends React.Component {
 
   componentWillMount() {
 
@@ -50,7 +50,7 @@ class App extends React.Component {
   }
 }
 
-App.propTypes = {
+Game.propTypes = {
   boardSize: PropTypes.shape({
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired
@@ -69,4 +69,4 @@ function mapStateToProps(state) {
     values: state.values
   };
 }
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(Game);

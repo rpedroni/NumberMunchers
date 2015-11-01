@@ -1,10 +1,13 @@
 Component & containers
 ===
 
-> Same level: siblings
+Screens
++ Wrapper (for app-wide styles)
+  + Home
+  + Game
 
-> Indent: child
 
+Components
 + App
   + Player
   + GameBoard

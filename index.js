@@ -10,8 +10,10 @@ import { DevTools, DebugPanel, LogMonitor } from 'redux-devtools/lib/react';
 // Connect redux with react
 import { Provider } from 'react-redux';
 
-// App container
-import App from './src/containers/App';
+// Containers & Screens
+import Wrapper from './src/containers/Wrapper';
+import Home from './src/containers/Home';
+import Game from './src/containers/Game';
 
 // Reducers
 import hero from './src/redux/reducers/hero';
@@ -19,15 +21,9 @@ import board from './src/redux/reducers/board';
 import values from './src/redux/reducers/values';
 
 // React/redux router
-import { Route } from 'react-router';
+import { Route, IndexRoute } from 'react-router';
 import { reduxReactRouter, routerStateReducer, ReduxRouter } from 'redux-router';
 import { createHistory } from 'history';
-
-// App routes
-const routes = (
-  <Route path="/" component={App}>
-  </Route>
-);
 
 // Insert routing state into app state
 let reducer = combineReducers({
@@ -40,11 +36,13 @@ let reducer = combineReducers({
 // Compose reduxReactRouter with other store enhancers
 const store = compose(
   reduxReactRouter({
-    routes,
     createHistory
   }),
   devTools()
-)(createStore)(reducer, {
+)(createStore)(reducer,
+
+  // Pass in initial state
+  {
   board: { size: { width: 6, height: 4 }},
   hero: { position: { x: 0, y: 0 }},
   values: []
@@ -53,12 +51,19 @@ const store = compose(
 render(
   <div>
     <Provider store={store}>
-      <App />
+      <ReduxRouter>
+        <Route path="/" component={Wrapper}>
+          <IndexRoute component={Home}/>
+          <Route path="/game" component={Game}/>
+        </Route>
+      </ReduxRouter>
     </Provider>
 
+    {/*
     <DebugPanel top right bottom>
       <DevTools store={store} monitor={LogMonitor} />
     </DebugPanel>
+    */}
 
   </div>,
   document.getElementById('app')
