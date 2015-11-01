@@ -15,13 +15,12 @@ import GameBoard from '../components/GameBoard';
 import Player from './Player';
 
 // Utils
-import { handleHeroMove } from '../utils/GameLogic';
+import GameLogic from '../utils/GameLogic';
+let gameLogic = new GameLogic();
 
 class App extends React.Component {
 
   componentWillMount() {
-
-    console.log(this.props);
 
     // TODO: still dumb level start - update this later
     // Signal level start
@@ -30,10 +29,12 @@ class App extends React.Component {
     );
   }
 
+  // Handle player wanting to move hero
   playerMove(direction) {
-    let newHP = handleHeroMove(this.props.heroPosition, direction, this.props.boardSize);
+    let newHP = gameLogic.handleHeroMove(this.props.heroPosition, direction, this.props.boardSize);
     this.props.dispatch(playerMoved(newHP));
   }
+  // Handle "eat" command
   playerEat() {
     this.props.dispatch(playerEat());
   }
