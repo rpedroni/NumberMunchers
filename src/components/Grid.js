@@ -17,7 +17,7 @@ class Grid extends React.Component {
         position: 'relative', // Used to maintain HERO inside of grid
         display: 'flex',
         flexFlow: 'row wrap',
-        backgroundColor: 'rgb(240, 240, 240)',
+        backgroundColor: '#eee',
         flexGrow: 9
       },
       cell: {
@@ -44,7 +44,7 @@ class Grid extends React.Component {
         <Hero position={this.props.heroPosition} />
 
         {gridCells}
-        
+
       </div>
     );
   }

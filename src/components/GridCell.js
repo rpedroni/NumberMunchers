@@ -4,7 +4,7 @@ class GridCell extends React.Component {
 
   render() {
     const DIMENSION = 50;
-    const BORDER = '3px solid rgb(70, 70, 70)';
+    const BORDER = '4px solid rgb(70, 70, 70)';
     let style = {
       borderLeft: BORDER,
       borderTop: BORDER,

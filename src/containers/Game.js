@@ -12,7 +12,7 @@ import {
 
 // Components
 import GameBoard from '../components/GameBoard';
-import Player from './Player';
+import Player from '../components/Player';
 
 // Utils
 import GameLogic from '../utils/GameLogic';

@@ -31,7 +31,7 @@ render(
 
         <Route path="/" component={Wrapper}>
           <IndexRoute component={Home}/>
-          <Route path="/game" component={Game}/>
+          <Route path="game" component={Game}/>
         </Route>
 
       </ReduxRouter>

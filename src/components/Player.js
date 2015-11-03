@@ -5,7 +5,6 @@ class Player extends React.Component {
 
   constructor(props, context) {
     super(props, context);
-
     // Bind instance method to `this` here so we can removeEventListener
     // from same instance as sent to addEventListener
     this.keydown = this.keydown.bind(this);
