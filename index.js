@@ -52,10 +52,12 @@ render(
   <div>
     <Provider store={store}>
       <ReduxRouter>
+        
         <Route path="/" component={Wrapper}>
           <IndexRoute component={Home}/>
           <Route path="/game" component={Game}/>
         </Route>
+
       </ReduxRouter>
     </Provider>
 

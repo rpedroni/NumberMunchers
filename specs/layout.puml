@@ -1,0 +1,30 @@
+@startuml
+
+' Home
+rectangle Wrapper {
+  rectangle Home {
+  }
+}
+
+newpage
+
+' Game
+rectangle Wrapper {
+  rectangle Game {
+    rectangle Player {
+    }
+    rectangle GameBoard {
+      rectangle RuleDisplay {
+      }
+      rectangle Grid {
+        rectangle GridCell {
+        }
+        rectangle Hero {
+        }
+      }
+    }
+  }
+}
+
+
+@enduml

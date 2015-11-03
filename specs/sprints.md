@@ -20,16 +20,28 @@ Development Steps - Scrum
 + Based on move commands, make Hero move around inside the Grid
 
 
-### Sprint #3 [2015-10-28 20:22]
+### Sprint #3 [2015-10-28 20:22] [DONE!]
 1. Create the number generator
   + Has no rule or logic, just generated random numbers to fill in all the grid cells
   + Will work alongside redux actions
   + On updating numbers, will send an action so Appstate can get a hold of the numbers
 
-### Sprint #4 [2015-10-31 14:21]
+### Sprint #4 [2015-10-31 14:21] [DONE!]
 1. Create a main/home screen to promptuser about game
   + Barebone: just create a screen with a "Start Game" button
   + Used only to prepare project for routing and starting a level/game with
   dynamic or user defined props
   + Will start the same game as always after the user presses "Start Game", but routing
   them to a new screen
+
+### Sprint #5 [2015-11-03 14:03]
+1. Enable hero to eat values
+  + When a value is eaten, it must disappear form the underlying cell
+  + For now, don't validate the value, just make it disappear
+
+
+### Sprint X [ THE FUTURE, oooooh ]
+1. Create option values in Home screen (all non-working for now, just dummy placeholders)
+  + Let user choose
+    + Difficulty
+    + Rule type
