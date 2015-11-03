@@ -1,10 +1,11 @@
 Component & containers
 ===
 
-Screens
-+ Wrapper (for app-wide styles)
-  + Home
-  + Game
++ ### Wrapper
+
+  + ### Home
+
+  + ### Game
     + Player
     + GameBoard
       + RuleDisplay
