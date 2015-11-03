@@ -1,7 +1,5 @@
 import React, { PropTypes } from 'react';
 
-import { Motion, spring, presets } from 'react-motion';
-
 class Hero extends React.Component {
 
   render() {
