@@ -24,7 +24,7 @@ Development Steps - Scrum
 1. Create the number generator
   + Has no rule or logic, just generated random numbers to fill in all the grid cells
   + Will work alongside redux actions
-  + On updating numbers, will send an action so Appstate can get a hold of the numbers
+  + On updating numbers, will send an action so App state can get a hold of the numbers
 
 ### Sprint #4 [2015-10-31 14:21] [DONE!]
 1. Create a main/home screen to promptuser about game
@@ -40,7 +40,7 @@ Development Steps - Scrum
   + For now, don't validate the value, just make it disappear
 
 
-### Sprint X [ THE FUTURE, oooooh ]
+### Sprint X [ THE FUTURE ]
 1. Create option values in Home screen (all non-working for now, just dummy placeholders)
   + Let user choose
     + Difficulty
