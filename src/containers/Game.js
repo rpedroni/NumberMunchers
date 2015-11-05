@@ -36,7 +36,8 @@ class Game extends React.Component {
   }
   // Handle "eat" command
   playerEat() {
-    this.props.dispatch(playerEat());
+    let index = this.props.boardSize.width * this.props.heroPosition.y + this.props.heroPosition.x;
+    this.props.dispatch(playerEat(index));
   }
 
   render() {

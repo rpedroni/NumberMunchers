@@ -1,5 +1,6 @@
 import {
-  GENERATE_VALUES
+  GENERATE_VALUES,
+  PLAYER_ACTION_EAT
 } from '../actions/actions';
 
 import { RANDOM_NUMBERS } from '../../utils/ValueGenerator';
@@ -17,6 +18,14 @@ export default function values(state = [], action) {
         return RANDOM_NUMBERS.slice(0, action.quantity);
       }
       break;
+
+    case PLAYER_ACTION_EAT:
+      return [
+        ...state.slice(0, action.index),
+        '',
+        ...state.slice(action.index + 1)
+      ];
+      return state;
 
     default:
     return state;

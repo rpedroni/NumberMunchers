@@ -15,8 +15,11 @@ export function playerMoved(position) {
 }
 //
 export const PLAYER_ACTION_EAT = 'PLAYER_ACTION_EAT';
-export function playerEat() {
-  return { type: PLAYER_ACTION_EAT };
+export function playerEat(index) {
+  return {
+    type: PLAYER_ACTION_EAT,
+    index
+  };
 }
 
 //

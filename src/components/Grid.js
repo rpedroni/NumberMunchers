@@ -10,18 +10,19 @@ class Grid extends React.Component {
     let
     numColumns = this.props.boardSize.width,
     numRows = this.props.boardSize.height,
-    values = this.props.values;
+    values = this.props.values,
+    width = this.props.width,
+    height = this.props.height;
 
     let style = {
       grid: {
         position: 'relative', // Used to maintain HERO inside of grid
-        display: 'flex',
-        flexFlow: 'row wrap',
+        height: height,
         backgroundColor: '#eee',
-        flexGrow: 9
       },
       cell: {
-        flex: `1 0 ${100/numColumns}%`,
+        width: width / numColumns,
+        height: height / numRows
       }
     };
 

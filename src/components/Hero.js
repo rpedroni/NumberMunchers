@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react';
 
+const DIMENSION = 66;
+const HALF_D = DIMENSION / 2;
+
 class Hero extends React.Component {
 
   render() {
-    const DIMENSION = 66;
-    const HALF_D = DIMENSION / 2;
     let style = {
       borderRadius: '50%',
       backgroundColor: 'rgb(58, 130, 54)',
