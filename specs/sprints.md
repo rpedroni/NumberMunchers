@@ -34,10 +34,18 @@ Development Steps - Scrum
   + Will start the same game as always after the user presses "Start Game", but routing
   them to a new screen
 
-### Sprint #5 [2015-11-03 14:03]
+### Sprint #5 [2015-11-03 14:03] [DONE!]
 1. Enable hero to eat values
   + When a value is eaten, it must disappear form the underlying cell
   + For now, don't validate the value, just make it disappear
+
+### Sprint #6 [2015-11-05 18:43]
+1. Generate values based a set of rules
+  + Will implement following rules:
+    - Prime numbers
+    - Multiples
+  + Will randomly choose between any of them
+  + Will display rule title accordingly
 
 
 ### Sprint X [ THE FUTURE ]

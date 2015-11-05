@@ -1,15 +1,14 @@
 @startuml
 
-title Random number generation
+title Level start
 
 start
 :Level starts;
-:Send action;
 :NumberGenerator gets board
 size (WxH);
-:NumberGenerator generates WxH
-random numbers;
-:NumberGenerator sends action, passing
+:ValueGenerator generates WxH numbers,
+based on a randomly chosen rule;
+:ValueGenerator sends action, passing
 the generated numbers;
 :AppState gets a hold of numbers
 and is updated;

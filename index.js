@@ -19,7 +19,7 @@ import configureStore from './src/redux/configureStore';
 
 // Create store with initial states
 const store = configureStore({
-  board: { size: { width: 6, height: 4 }},
+  board: { size: { width: 7, height: 5 }},
   hero: { position: { x: 0, y: 0 }},
   values: []
 });
