@@ -4,7 +4,7 @@ class RuleDisplay extends React.Component {
 
   render() {
     let style = {
-      height: this.props.height || 0,
+      height: this.props.height,
       boxSizing: 'border-box',
       padding: 10,
       marginBottom: 10,
@@ -12,17 +12,16 @@ class RuleDisplay extends React.Component {
       fontSize: 30,
     };
 
-    // TODO
-    let rule = "Multiples of 5";
     return (
       <div style={style}>
-        <span>{rule}</span>
+        <span>{this.props.rule}</span>
       </div>
     );
   }
 }
 RuleDisplay.propTypes = {
-  height: PropTypes.number
+  rule: PropTypes.string.isRequired,
+  height: PropTypes.number.isRequired
 };
 
 export default RuleDisplay;

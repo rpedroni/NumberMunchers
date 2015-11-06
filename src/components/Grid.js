@@ -6,14 +6,7 @@ import Hero from './Hero';
 class Grid extends React.Component {
 
   render() {
-    // Dimensions of grid
-    let
-    numColumns = this.props.boardSize.width,
-    numRows = this.props.boardSize.height,
-    values = this.props.values,
-    width = this.props.width,
-    height = this.props.height;
-
+    const { boardSize, options, width, height } = this.props;
     let style = {
       grid: {
         position: 'relative', // Used to maintain HERO inside of grid
@@ -21,20 +14,20 @@ class Grid extends React.Component {
         backgroundColor: '#eee',
       },
       cell: {
-        width: width / numColumns,
-        height: height / numRows
+        width: width / boardSize.width,
+        height: height / boardSize.height
       }
     };
 
     let gridCells = [];
-    values.forEach((value, index) => {
+    options.forEach((option, index) => {
       gridCells.push(
         <GridCell
-          value={value}
+          text={option.text}
           key={index}
           style={style.cell}
-          isLastCol={(index + 1) % numColumns === 0}
-          isLastRow={index + 1 > (numRows - 1) * numColumns}
+          isLastCol={(index + 1) % boardSize.width === 0}
+          isLastRow={index + 1 > (boardSize.height - 1) * boardSize.width}
           />
       );
     });
@@ -55,7 +48,7 @@ Grid.propTypes = {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired
   }).isRequired,
-  values: PropTypes.array.isRequired
+  options: PropTypes.array.isRequired
 };
 
 export default Grid;

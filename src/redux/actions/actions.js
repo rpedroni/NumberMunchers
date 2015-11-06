@@ -24,6 +24,11 @@ export function playerEat(index) {
 
 //
 export const GENERATE_VALUES = 'GENERATE_VALUES';
+export const ValueRuleTypes = {
+  PrimeNumbers: 'RULE_PRIMENUMBERS',
+  Multiples: 'RULE_MULTIPLES',
+  EqualToSums: 'RULE_EQUAL_SUMS'
+};
 export function generateValues(rule, quantity) {
   return {
     type: GENERATE_VALUES,

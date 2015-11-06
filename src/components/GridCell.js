@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 class GridCell extends React.Component {
 
@@ -23,14 +23,19 @@ class GridCell extends React.Component {
 
     return (
       <div style={Object.assign(style, this.props.style)}>
-          <span style={style.text}>
-            {this.props.value || String.fromCharCode(20)}
-          </span>
+        <span style={style.text}>
+          {/* Filling with 20 so div won't lose formatting */}
+          {this.props.text || String.fromCharCode(20)}
+        </span>
       </div>
     );
-
   }
-
 }
+GridCell.propTypes = {
+  text: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])
+};
 
 export default GridCell;

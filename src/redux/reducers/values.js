@@ -1,31 +1,51 @@
 import {
   GENERATE_VALUES,
-  PLAYER_ACTION_EAT
+  PLAYER_ACTION_EAT,
+  ValueRuleTypes
 } from '../actions/actions';
 
-import { RANDOM_NUMBERS } from '../../utils/ValueGenerator';
+import ValueGenerator from '../../utils/ValueGenerator';
+let valueGenerator = new ValueGenerator();
+
+const initialState = {
+  title: '',
+  options: [],
+  correctCount: 0
+};
 
 // Export app reducer
-export default function values(state = [], action) {
+export default function values(state = initialState, action) {
 
   switch (action.type) {
 
     case GENERATE_VALUES:
-      // TODO: not using state or action.rule for anything yet
+
       switch (action.rule) {
-        // Random values
+
+        // Multiples
+        case ValueRuleTypes.Multiples:
+          return valueGenerator.multiples(action.quantity);
+
+        // Equal sums
+        case ValueRuleTypes.EqualToSums:
+          return valueGenerator.equalToSum(action.quantity);
+
+        // Prime numbers
         default:
-        return RANDOM_NUMBERS.slice(0, action.quantity);
+          return valueGenerator.primeNumbers(action.quantity);
       }
       break;
 
     case PLAYER_ACTION_EAT:
-      return [
-        ...state.slice(0, action.index),
-        '',
-        ...state.slice(action.index + 1)
+      const { options } = state;
+      let option = options[action.index];
+      console.log(option.correct);
+      let newOptions = [
+        ...options.slice(0, action.index),
+        Object.assign({}, option, { text: '' }),
+        ...options.slice(action.index + 1)
       ];
-      return state;
+      return Object.assign({}, state, { options: newOptions });
 
     default:
     return state;

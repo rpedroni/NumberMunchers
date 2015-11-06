@@ -7,7 +7,9 @@ import {
   generateValues,
   // Player
   playerMoved,
-  playerEat
+  playerEat,
+  // Values
+  ValueRuleTypes
 } from '../redux/actions/actions';
 
 // Components
@@ -23,9 +25,19 @@ class Game extends React.Component {
   componentWillMount() {
 
     // TODO: still dumb level start - update this later
+    let stupidRandom = Math.round(Math.random() * 2) + 1;
+    let rule;
+    if (stupidRandom === 1) rule = ValueRuleTypes.PrimeNumbers;
+    else if (stupidRandom === 2) rule = ValueRuleTypes.Multiples;
+    else rule = ValueRuleTypes.EqualToSums;
+    // TODO: move this logic to Home screen
+
     // Signal level start
     this.props.dispatch(
-      generateValues(null, this.props.boardSize.width * this.props.boardSize.height)
+      generateValues(
+        rule, // rule
+        this.props.boardSize.width * this.props.boardSize.height // quantity
+      )
     );
   }
 
@@ -60,7 +72,11 @@ Game.propTypes = {
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired
   }).isRequired,
-  values: PropTypes.array.isRequired
+  values: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    options: PropTypes.array.isRequired,
+    correctCount: PropTypes.number.isRequired,
+  }).isRequired
 };
 
 function mapStateToProps(state) {

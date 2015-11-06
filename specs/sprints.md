@@ -44,6 +44,7 @@ Development Steps - Scrum
   + Will implement following rules:
     - Prime numbers
     - Multiples
+    - Equal to sum expression
   + Will randomly choose between any of them
   + Will display rule title accordingly
 

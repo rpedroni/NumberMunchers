@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-const DIMENSION = 66;
+const DIMENSION = 90;
 const HALF_D = DIMENSION / 2;
 
 class Hero extends React.Component {
