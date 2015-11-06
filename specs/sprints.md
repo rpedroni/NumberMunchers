@@ -48,7 +48,10 @@ Development Steps - Scrum
   + Will randomly choose between any of them
   + Will display rule title accordingly
 
-### Sprint #7 [2015-11-05 18:43]
+### Sprint #7 [2015-11-06 17:11]
+1. Make reducers pure (looking at you, values reducer!)
+
+### Sprint #8
 1. Give hero a set of 3 initial lives
   + Will lose a life when he eats a wrong option
 
