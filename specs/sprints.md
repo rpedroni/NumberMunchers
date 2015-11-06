@@ -39,7 +39,7 @@ Development Steps - Scrum
   + When a value is eaten, it must disappear form the underlying cell
   + For now, don't validate the value, just make it disappear
 
-### Sprint #6 [2015-11-05 18:43]
+### Sprint #6 [2015-11-05 18:43] [DONE!]
 1. Generate values based a set of rules
   + Will implement following rules:
     - Prime numbers
@@ -48,6 +48,9 @@ Development Steps - Scrum
   + Will randomly choose between any of them
   + Will display rule title accordingly
 
+### Sprint #7 [2015-11-05 18:43]
+1. Give hero a set of 3 initial lives
+  + Will lose a life when he eats a wrong option
 
 ### Sprint X [ THE FUTURE ]
 1. Create option values in Home screen (all non-working for now, just dummy placeholders)
