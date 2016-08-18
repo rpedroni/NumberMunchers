@@ -17,10 +17,16 @@ import { ReduxRouter } from 'redux-router';
 
 import configureStore from './src/redux/configureStore';
 
+// TODO:
 // Create store with initial states
 const store = configureStore({
-  board: { size: { width: 6, height: 4 }},
-  hero: { position: { x: 0, y: 0 }}
+  board: {
+    size: { width: 6, height: 4 }
+  },
+  hero: {
+    lives: 3,
+    position: { x: 0, y: 0 },
+  }
 });
 
 render(

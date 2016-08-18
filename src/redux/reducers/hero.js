@@ -1,5 +1,5 @@
 import {
-  PLAYER_MOVED,
+  ACTIONS,
   playerMoved,
   PlayerMoveDirections
 } from '../actions/actions';
@@ -14,8 +14,13 @@ export default function hero(state = initialState, action) {
 
   switch (action.type) {
 
-    case PLAYER_MOVED:
-    return { position: { x: action.position.x, y: action.position.y } };
+    case ACTIONS.PLAYER_MOVED:
+    return Object.assign({}, state, { position: { x: action.position.x, y: action.position.y } });
+
+    case ACTIONS.HERO_LOSE_LIFE:
+    let { lives } = state;
+    console.log(state, lives);
+    return Object.assign({}, state, { lives: lives - 1 });
 
     default:
     return state;

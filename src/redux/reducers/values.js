@@ -1,11 +1,7 @@
 import {
-  GENERATE_VALUES,
-  PLAYER_ACTION_EAT,
+  ACTIONS,
   ValueRuleTypes
 } from '../actions/actions';
-
-import ValueGenerator from '../../utils/ValueGenerator';
-let valueGenerator = new ValueGenerator();
 
 const initialState = {
   title: '',
@@ -18,28 +14,14 @@ export default function values(state = initialState, action) {
 
   switch (action.type) {
 
-    case GENERATE_VALUES:
-
-      switch (action.rule) {
-
-        // Multiples
-        case ValueRuleTypes.Multiples:
-          return valueGenerator.multiples(action.quantity);
-
-        // Equal sums
-        case ValueRuleTypes.EqualToSums:
-          return valueGenerator.equalToSum(action.quantity);
-
-        // Prime numbers
-        default:
-          return valueGenerator.primeNumbers(action.quantity);
-      }
+    // Values are generated in thunk'd action creator in actions.js, using ValueGenerator
+    case ACTIONS.GENERATE_VALUES:
+      return action.values;
       break;
 
-    case PLAYER_ACTION_EAT:
+    case ACTIONS.PLAYER_ACTION_EAT:
       const { options } = state;
       let option = options[action.index];
-      console.log(option.correct);
       let newOptions = [
         ...options.slice(0, action.index),
         Object.assign({}, option, { text: '' }),

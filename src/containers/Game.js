@@ -31,8 +31,6 @@ class Game extends React.Component {
     else if (stupidRandom === 2) rule = ValueRuleTypes.Multiples;
     else rule = ValueRuleTypes.EqualToSums;
     // TODO: move this logic to Home screen
-
-    // Signal level start
     this.props.dispatch(
       generateValues(
         rule, // rule

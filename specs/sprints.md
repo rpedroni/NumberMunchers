@@ -48,12 +48,14 @@ Development Steps - Scrum
   + Will randomly choose between any of them
   + Will display rule title accordingly
 
-### Sprint #7 [2015-11-06 17:11]
+### Sprint #7 [2015-11-06 17:11] [DONE!]
 1. Make reducers pure (looking at you, values reducer!)
+  + Use redux-thunk to move non pure logic into async action creators
 
-### Sprint #8
+### Sprint #8 [2015-11-07 23:24] [DONE!]
 1. Give hero a set of 3 initial lives
   + Will lose a life when he eats a wrong option
+  + Does not account for zero or negative values, just decrements lives
 
 ### Sprint X [ THE FUTURE ]
 1. Create option values in Home screen (all non-working for now, just dummy placeholders)
